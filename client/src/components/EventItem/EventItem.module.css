@@ -1,0 +1,25 @@
+.event-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 350px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2em;
+    margin: 2em;
+}
+
+.btn-block{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+h2{
+    margin-top: 0;
+    height: 20%;
+}
+p{
+    height: 60%;
+}
