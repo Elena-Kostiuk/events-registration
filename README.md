@@ -1,7 +1,7 @@
 # Web-based application for events registration
 
 ## Project Description
-This project is a web-based application for events registration. It consists of three main pages:
+This demo project is a web-based application for events registration. It consists of three main pages:
 1. **Events Page**: Users can observe the paginated list of available events.
 2. **Registration Page**: Users can register for an event by filling out a registration form.
 3. **Participants Page**: Users can see a list of registered participants.
@@ -16,7 +16,7 @@ To install the project on your local machine, follow these steps:
 
 ### Clone the repository:
 
-    git clone <URL repository>
+    git clone https://github.com/Elena-Kostiuk/events-registration.git
 
 ### Install dependencies:
 
@@ -24,7 +24,10 @@ In the project directories 'client' and 'server', install the respective depende
 
     npm install
 
-### Edit the server \ config \ config.json file with your information:
+### Copy the server \ config \ config.json.dist file 
+    cp config.json.dist config.json
+
+and edit with your information:
 
     password: '[Your Password]',
     database: '[Your database]',
