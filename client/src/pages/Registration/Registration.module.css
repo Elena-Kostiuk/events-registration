@@ -1,33 +1,51 @@
-.form{
-    display: flex;
-    flex-direction: column;
-    width: 600px;
-    box-sizing: border-box;
-    border:1px solid black;
-    margin: 20px auto;
-    padding: 30px 80px;
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  box-sizing: border-box;
+  border: 1px solid rgba(33, 78, 145, 1);
+  margin: 120px;
+  padding: 30px 80px;
+  background-color: rgba(255, 255, 255, 0.541);
+  border-radius: 10px;
 }
-label{
-    padding: 20px 0 0 0;
-    margin-bottom: 10px;
-
-}
-.input{
-    padding: 10px;
-  
-}
-button{
-    margin-top: 20px;
-    height: 3em;
-
-}
-p{
-    margin-top: 30px;
-}
-.radio-box{
-margin-top: 10px;
+label {
+  padding: 20px 0 0 0;
+  margin-bottom: 10px;
 }
 
-div label{
-    margin-right: 20px;
+.input {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.288);
+}
+.btn-form {
+  margin-top: 20px;
+  height: 3em;
+  background: radial-gradient(
+    circle,
+    rgba(106, 176, 194, 1) 0%,
+    rgba(33, 78, 145, 1) 100%
+  );
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+.form p {
+  margin-top: 30px;
+}
+.radio-box {
+  margin-top: 10px;
+}
+
+div label {
+  margin-right: 20px;
+}
+
+.error {
+  color: rgb(196, 44, 145);
+  text-decoration: wavy;
+  padding: 2px;
 }

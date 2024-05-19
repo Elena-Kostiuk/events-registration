@@ -1,16 +1,21 @@
-.page-nav{
-display: flex;
-justify-content: center;
+.page-nav {
+  display: flex;
+  justify-content: center;
 }
 
-.page{
-    padding: 1em;
-    cursor: pointer;
+.page {
+  padding: 1em;
+  cursor: pointer;
 }
 
-.page-btn{
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
-    font-size: 1.8em;
-    cursor: pointer;
+.page-btn {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 1.8em;
+  cursor: pointer;
+}
+.page-current {
+  padding: 1em;
+  cursor: pointer;
+  text-decoration: underline;
 }

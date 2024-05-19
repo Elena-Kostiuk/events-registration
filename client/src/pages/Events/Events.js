@@ -8,30 +8,35 @@ export default function Events (props) {
   const [events, setEvents] = useState();
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [countViewEvents] = useState(10);
+  const [countViewEvents] = useState(8);
 
   useEffect(() => {
     setLoading(true);
     getAllEvents().then(res => {
-      console.log(res.data.data);
       setEvents(res.data.data);
       setLoading(false);
     });
   }, []);
 
   if (loading) {
-    return <h2 className={style.dashboard}>Loading...</h2>;
+    return (
+      <main>
+        <h2 className={style.dashboard}>Loading...</h2>
+      </main>
+    );
   }
 
   const goRegistration = id => {
     props.history.push('/registration', { eventId: id });
   };
+
   const goView = id => {
     props.history.push('/participants', { eventId: id });
   };
 
   return (
-    <>
+    <main>
+      <h2 className={style['dashboard-title']}>Events</h2>
       <section className={style.dashboard}>
         {events
           ?.slice(
@@ -39,7 +44,12 @@ export default function Events (props) {
             countViewEvents * currentPage
           )
           .map(item => (
-            <EventItem info={item} btnHandler={goRegistration} key={item.id} />
+            <EventItem
+              info={item}
+              btnRegistration={goRegistration}
+              btnView={goView}
+              key={item.id}
+            />
           ))}
       </section>
       <Pagination
@@ -48,6 +58,6 @@ export default function Events (props) {
         countViewEvents={countViewEvents}
         changePage={setCurrentPage}
       ></Pagination>
-    </>
+    </main>
   );
 }
