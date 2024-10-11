@@ -1,5 +1,5 @@
-const { Event, Visitor } = require('../models');
-const { checkout } = require('../router');
+const { Event, Visitor } = require("../models");
+const { checkout } = require("../router");
 
 module.exports.getVisitors = async (req, res, next) => {
   try {
@@ -27,6 +27,11 @@ module.exports.addVisitorToEvent = async (req, res, next) => {
       body,
       params: { eventId },
     } = req;
+
+    if (!body.birthday) {
+      delete body.birthday;
+    }
+
     const [visitorInst, created] = await Visitor.findOrCreate({
       where: {
         email: body.email,
@@ -39,12 +44,12 @@ module.exports.addVisitorToEvent = async (req, res, next) => {
     if (check) {
       res
         .status(200)
-        .send({ message: 'It looks like you have already registered before' });
+        .send({ message: "It looks like you have already registered before" });
     } else {
       await eventInst.addVisitor(visitorInst);
       res
         .status(200)
-        .send({ message: 'You are successfully registered for the event' });
+        .send({ message: "You are successfully registered for the event" });
     }
   } catch (error) {}
 };

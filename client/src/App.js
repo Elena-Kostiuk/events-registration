@@ -1,5 +1,5 @@
 import Header from './components/Header';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import Events from './pages/Events/Events';
 import Registration from './pages/Registration/Registration';
 import Participants from './pages/Participants/Participants';

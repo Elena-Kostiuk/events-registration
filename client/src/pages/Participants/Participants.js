@@ -13,14 +13,19 @@ export default function Participants (props) {
       setEventName(res.data.eventWithVisitors.title);
     });
   }, []);
-  return (
-    <main>
-      <h2>"{eventName}" participants</h2>
-      <section className={style.dashboard}>
-        {visitors?.map(item => (
-          <ParticipantsItem info={item} key={item.id} />
-        ))}
-      </section>
-    </main>
-  );
-}
+
+
+    return (
+      <main>
+        <h2>"{eventName}" participants</h2>
+        <section className={style.dashboard}>
+          { visitors && visitors.length > 0 ? visitors.map(item => (
+            <ParticipantsItem info={item} key={item.id} />
+          )): <h3>No participants yet</h3>}
+        </section>
+      </main>
+    );
+  }
+
+
+
